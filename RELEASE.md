@@ -1,3 +1,10 @@
+# RELEASE 1.2.1
+
+## New Features
+
+- Add language Selection options. Users can use -L or --language option to select the language show in the webpage(1.2.1 only support {zh, en}, and default is en)
+
+
 # RELEASE 1.2.0
 
 ## New design
