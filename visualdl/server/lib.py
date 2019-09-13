@@ -320,6 +320,8 @@ def get_embeddings(storage, mode, reduction, dimension=2, num_records=5000):
         elif reduction == 'pca':
             low_dim_embs = simple_pca(high_dimensional_vectors, dimension)
 
+        low_dim_embs = np.real(low_dim_embs)
+
         return {"embedding": low_dim_embs.tolist(), "labels": labels}
 
 

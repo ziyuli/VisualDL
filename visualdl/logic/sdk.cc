@@ -361,16 +361,26 @@ void Embedding::AddEmbeddingsWithWordDict(
   }
 }
 
+void Embedding::AddEmbeddingsWithWordList(
+    const std::vector<std::vector<float>>& word_embeddings,
+    std::vector<std::string>& word_list) {
+  for (unsigned int i = 0; i < word_list.size(); ++i) {
+    AddEmbedding(i, word_embeddings[i], word_list[i]);
+  }
+}
+
 void Embedding::AddEmbedding(int item_id,
                              const std::vector<float>& one_hot_vector,
                              const std::string& label) {
-  auto record = tablet_.AddRecord();
-  record.SetId(item_id);
-  time_t time = std::time(nullptr);
-  record.SetTimeStamp(time);
-  auto entry = record.AddData();
-  entry.SetMulti<float>(one_hot_vector);
-  entry.SetRaw(label);
+  if (one_hot_vector.size() && label.length()) {
+    auto record = tablet_.AddRecord();
+    record.SetId(item_id);
+    time_t time = std::time(nullptr);
+    record.SetTimeStamp(time);
+    auto entry = record.AddData();
+    entry.SetMulti<float>(one_hot_vector);
+    entry.SetRaw(label);
+  }
 }
 
 /*

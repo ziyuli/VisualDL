@@ -342,6 +342,9 @@ struct Embedding {
   void AddEmbeddingsWithWordDict(
       const std::vector<std::vector<float>>& word_embeddings,
       std::map<std::string, int>& word_dict);
+  void AddEmbeddingsWithWordList(
+      const std::vector<std::vector<float>>& word_embeddings,
+      std::vector<std::string>& word_list);
 
 private:
   void AddEmbedding(int item_id,

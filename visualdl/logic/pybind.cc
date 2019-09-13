@@ -263,6 +263,8 @@ PYBIND11_MODULE(core, m) {
         PyBind class. Must instantiate through the LogWriter.
       )pbdoc")
       .def("set_caption", &cp::Embedding::SetCaption)
+      .def("add_embeddings_with_word_list",
+           &cp::Embedding::AddEmbeddingsWithWordList)
       .def("add_embeddings_with_word_dict",
            &cp::Embedding::AddEmbeddingsWithWordDict,
            R"pbdoc(

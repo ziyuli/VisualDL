@@ -32,7 +32,7 @@ set(THIRD_PARTY_PATH "${CMAKE_BINARY_DIR}/third_party" CACHE STRING
 ################################ Configurations #######################################
 option(WITH_DOC         "Compile VisualDL with documentation"       OFF)
 option(WITH_TESTING     "Compile VisualDL with unit testing"        ON)
-option(WITH_PYTHON3     "Compile VisualDL with Python 3"            OFF)
+option(WITH_PYTHON3     "Compile VisualDL with Python 3"            ON)
 option(WITH_JULIA       "Compile VisualDL with Julia"               OFF)
 option(ON_RELEASE       "RELEASE mode" ON)
 
